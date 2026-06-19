@@ -1,0 +1,13 @@
+# Java artifacts
+*.class
+*.jar
+target/
+bin/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
