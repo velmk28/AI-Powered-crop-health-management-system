@@ -32,6 +32,37 @@ The AI-Powered Crop Health Management System is designed to assist farmers and a
    java PrakritiChatbot
    ```
 
+### Run locally (console app)
+
+Prerequisites:
+- Java JDK 8+ installed and `java`/`javac` on your PATH.
+- (Optional) MySQL running if you want the sentiment lookup feature. Default connection in the code:
+   - URL: `jdbc:mysql://localhost:3306/sentiment_db`
+   - User: `root`
+   - Password: `mysql`
+
+Compile and run (from the project root):
+```sh
+javac PrakritiChatbot.java SentimentDatabase.java
+java PrakritiChatbot
+```
+
+The program is interactive and will prompt you for:
+- the state (e.g., `Punjab`)
+- the crop you're interested in
+- a short soil-condition description (e.g., `fertile`, `compacted`)
+
+If you don't have MySQL available the program will still run but soil sentiment lookup will return a default score of 0.0.
+
+### Quick static preview (optional)
+A minimal `index.html` was added so you can preview a landing page with Live Server or a simple HTTP server:
+
+Using Python's simple server:
+```sh
+python -m http.server 8000 --directory .
+# then open http://localhost:8000
+```
+
 ## Usage
 - **Image Analysis**: Upload images of crops to receive disease predictions.
 - **Environmental Data Input**: Enter relevant environmental data to enhance prediction accuracy.
